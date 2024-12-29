@@ -26,7 +26,7 @@ const CarPage = ({ params }: any) => {
     getCar();
   }, []);
 
-  if (!car) return <div>Loading...</div>;
+  if (!car) return <div className="absolute left-[50%] top-[50%] text-xl">Loading...</div>;
 
   return (
     <div>
