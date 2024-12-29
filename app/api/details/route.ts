@@ -21,8 +21,8 @@ export async function POST(request:NextRequest) {
 
 export async function GET(request:NextRequest) {
   const { searchParams } = new URL(request.url);
-  const carId = Number(searchParams.get("id"));
-  const car = carsDatabase.find((car) => car.id === carId);
+  const carName = searchParams.get("name");
+  const car = carsDatabase.find((car) => car.carName === carName);
 
   if (!car) {
     return NextResponse.json({ message: "Car not found" }, { status: 404 });

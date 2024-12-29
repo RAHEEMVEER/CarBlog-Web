@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import HeroCar from "../../public/images/car.png";
 import Link from "next/link";
+import Button from "./Button";
 
 export default function Hero() {
   return (
@@ -17,7 +18,7 @@ export default function Hero() {
           nulla aliquam eum quas perspiciatis aperiam incidunt ipsa facilis
           impedit.
         </p>
-        <Link href="/Cars"><button className="bg-blue-800 text-white text-sm px-3 py-2 rounded-md mt-6">Explore Cars</button></Link>
+        <Link href="/Cars"><Button style="bg-blue-800 text-white text-sm px-3 py-2 rounded-md mt-6" content="Explore Cars"/></Link>
       </div>
 
       <div className="relative flex items-center w-full sm:w-[50%] h-[300px] self-end sm:self-auto">

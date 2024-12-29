@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { useEffect, useState } from "react";
@@ -16,7 +16,7 @@ const CarPage = ({ params }: any) => {
   useEffect(() => {
     const getCar = async () => {
       try {
-        const res = await fetch(`/api/details?id=${params.id}`);
+        const res = await fetch(`/api/details?name=${params.carName}`);
         const data = await res.json();
         setCar(data);
       } catch (error) {
@@ -31,7 +31,7 @@ const CarPage = ({ params }: any) => {
   return (
     <div>
       <h1>{car.carName}</h1>
-      <img src={car.img} alt={car.carName} />
+      <img src={car.img} alt={car.carName} className="w-[300px]"/>
     </div>
   );
 };
