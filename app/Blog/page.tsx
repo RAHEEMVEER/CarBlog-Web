@@ -37,7 +37,7 @@ export default function Page() {
   }, []);
 
   return (
-    <section className="py-8 px-4 md:px-14 min-h-[88vh]">
+    <section className="py-5 px-4 md:px-14 min-h-[88vh]">
       <div className="w-full flex flex-col items-center justify-center relative">
         <h1 className="text-2xl font-semibold">Cars Blog</h1>
         <div className="after:absolute bg-blue-800 w-[100px] h-[3px] mt-1 rounded-md"></div>
