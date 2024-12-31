@@ -125,13 +125,13 @@ export default function Page() {
   }, []);
 
   return (
-    <section className="py-5 px-4 md:px-14 min-h-[88vh]">
+    <section className="pt-5 pb-10 px-2 md:px-14 min-h-[88vh]">
       <div className="w-full flex flex-col items-center justify-center relative">
         <h1 className="text-2xl font-semibold">Cars Blog</h1>
         <div className="after:absolute z-[-10] bg-blue-800 w-[100px] h-[3px] mt-1 rounded-md"></div>
         <p className="mt-5 text-base">"On our website, you'll find the latest car reviews, news, and tips to assist you in car buying and maintenance."</p>
       </div>
-      <div className="grid grid-cols-4 min-h-[72vh] gap-3 mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 min-h-[72vh] gap-3 mt-8">
         {blogCars.map((e, index) => (
           <div key={index} className="rounded-md bg-[#4869cc] py-3 px-3">
             <h1 className="text-white text-base">{e.carName}</h1>

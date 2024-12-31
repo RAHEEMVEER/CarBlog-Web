@@ -16,7 +16,7 @@ export default function Hero() {
 
       <div className="relative flex items-center w-full sm:w-[50%] h-[300px] self-end sm:self-auto">
         <div className="flex items-center justify-center absolute w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[300px] md:h-[300px] border-[15px] sm:border-[20px] right-[-20px] border-blue-800 rotate-45">
-          <Image src={HeroCar} alt="Car" className="absolute rotate-[-45deg] left-[-110px] top-[70px] sm:left-[-130px] md:left-[-180px] md:top-[110px] max-w-[280px] sm:max-w-[400px] md:max-w-[500px]"/>
+          <Image src={HeroCar} alt="Car" className="absolute rotate-[-45deg] left-[-80px] top-[70px] sm:left-[-145px] md:left-[-180px] md:top-[110px] max-w-[280px] sm:max-w-[400px] md:max-w-[500px]"/>
         </div>
       </div>
     </section>
