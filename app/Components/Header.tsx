@@ -7,10 +7,10 @@ export default function Header() {
        <Link href="/" className="text-base"><h1 className="text-2xl font-semibold">CarPoint.</h1></Link>
       <nav className="flex gap-8">
         <Link href="/" className="text-base">Home</Link>
-        <Link href="/" className="text-base">About</Link>
-        <Link href="/Cars" className="text-base">Cars</Link>
+        <Link href="/About" className="text-base">About</Link>
+        {/* <Link href="/Cars" className="text-base">Cars</Link> */}
         <Link href="/Blog" className="text-base">Blog</Link>
-        <Link href="/" className="text-base">Contact</Link>
+        {/* <Link href="/" className="text-base">Contact</Link> */}
       </nav>
     </header>
   );
