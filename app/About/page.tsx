@@ -2,7 +2,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <section className="pt-5 md:pt-10 pb-14 px-4 md:px-14 min-h-[90vh] w-full">
+    <section className="pt-5 md:pt-10 pb-14 px-2 md:px-14 min-h-[90vh] w-full">
       <div className="w-full flex justify-center items-center"></div>
       <div className="flex justify-center">
         <div className="w-full md:w-[75%]">
