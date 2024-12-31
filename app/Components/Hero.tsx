@@ -6,18 +6,11 @@ import Button from "./Button";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col lg:flex-row justify-between gap-7 xl:gap-0 min-h-[88vh] items-center py-20 px-4 md:px-14 overflow-hidden">
+    <section className="flex flex-col lg:flex-row justify-between gap-7 xl:gap-0 min-h-[88vh] items-center py-7 sm:py-20 px-4 md:px-14 overflow-hidden">
       <div className="w-full ]md:w-[75%] lg:w-[50%] h-max self-start lg:self-auto">
-        <h1 className="text-4xl font-semibold">Car Dealing Experience.</h1>
-        <h2 className="text-2xl font-semibold text-blue-800 mt-1">
-          Redefined!
-        </h2>
-        <p className="text-sm mt-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
-          debitis quia dolor, totam, libero laborum explicabo sunt id sed, quod
-          nulla aliquam eum quas perspiciatis aperiam incidunt ipsa facilis
-          impedit.
-        </p>
+        <h1 className="text-2xl sm:text-4xl font-semibold">Car Dealing Experience.</h1>
+        <h2 className="text-lg sm:text-2xl font-semibold text-blue-800 mt-1">Redefined!</h2>
+        <p className="text-sm mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur debitis quia dolor, totam, libero laborum explicabo sunt id sed, quod nulla aliquam eum quas perspiciatis aperiam incidunt ipsa facilis impedit.</p>
         <Link href="/Cars"><Button style="bg-blue-800 text-white text-sm px-3 py-2 rounded-md mt-6" content="Explore Cars"/></Link>
       </div>
 
