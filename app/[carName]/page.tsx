@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useEffect, useState } from "react";
+import Comments from "../Components/Comments";
 
 interface Car {
   id: number;
@@ -18,32 +19,18 @@ interface Car {
 
 const CarPage = ({ params }: any) => {
   const [car, setCar] = useState<Car | null>(null);
-  const [inputVal, setInputVal] = useState<string>("");
-  const [commentVal, setComment] = useState<string[]>([]);
-
-  const handleChange = (event: any) => {
-    setInputVal(event.target.value);
-  };
-
-  const submit = (e: any) => {
-    e.preventDefault();
-    if (inputVal.trim() !== "") {
-      setComment((prev) => [...prev, inputVal]);
-      setInputVal("");
-      console.log(commentVal);
-    };
+  
+  const getCar = async () => {
+    try {
+      const res = await fetch(`/api/details?name=${params.carName}`);
+      const data = await res.json();
+      setCar(data);
+    } catch (error) {
+      console.error("Error fetching car data:", error);
+    }
   };
 
   useEffect(() => {
-    const getCar = async () => {
-      try {
-        const res = await fetch(`/api/details?name=${params.carName}`);
-        const data = await res.json();
-        setCar(data);
-      } catch (error) {
-        console.error("Error fetching car data:", error);
-      }
-    };
     getCar();
   }, []);
 
@@ -107,13 +94,7 @@ const CarPage = ({ params }: any) => {
             <p className="text-gray-600 text-sm sm:text-base">{car.para6}</p>
           </div>
 
-          <div className="mt-8 sm:mt-14">
-            <h1 className="text-center text-xl sm:text-2xl text-gray-700">Give Your Feedback Here!</h1>
-            <form className="flex justify-center items-center gap-3 mt-3">
-              <input type="text" placeholder="Enter Comment" className="h-[35px] px-2 text-sm outline-blue-800" onChange={handleChange} value={inputVal}/>
-              <button className="bg-blue-800 w-[35px] h-[35px] rounded-md text-white" onClick={submit}><i className="ri-send-plane-2-fill"></i></button>
-            </form>
-          </div>
+          <Comments carName={params.carName}/>
         </div>
       </div>
     </div>
