@@ -18,6 +18,21 @@ interface Car {
 
 const CarPage = ({ params }: any) => {
   const [car, setCar] = useState<Car | null>(null);
+  const [inputVal, setInputVal] = useState<string>("");
+  const [commentVal, setComment] = useState<string[]>([]);
+
+  const handleChange = (event: any) => {
+    setInputVal(event.target.value);
+  };
+
+  const submit = (e: any) => {
+    e.preventDefault();
+    if (inputVal.trim() !== "") {
+      setComment((prev) => [...prev, inputVal]);
+      setInputVal("");
+      console.log(commentVal);
+    };
+  };
 
   useEffect(() => {
     const getCar = async () => {
@@ -34,14 +49,14 @@ const CarPage = ({ params }: any) => {
 
   if (!car)
     return (
-      <div className="absolute left-[50%] top-[50%] text-xl min-h-[80vh]">Loading...</div>
+      <div className="flex justify-center items-center text-xl min-h-[70vh]">Loading...</div>
     );
 
   return (
     <div className="py-5 pb-8 sm:pb-14 px-2 lg:px-14 min-h-[88vh]">
       <div className="w-full flex justify-center mt-5">
         <div className="w-full md:w-[75%]">
-          <h1 className="text-xl sm:text-2xl xl:text-3xl font-semibold text-start sm:text-center md:whitespace-nowrap text-gray-800">Discover the Ultimate Driving Experience with {car.carName}:</h1>
+          <h1 className="text-xl sm:text-2xl xl:text-3xl font-semibold text-start sm:text-center md:whitespace-nowrap text-gray-700">Discover the Ultimate Driving Experience with {car.carName}:</h1>
 
           <div className="mt-8 sm:mt-10">
             <h2 className="text-lg sm:text-xl xl:text-2xl font-bold text-gray-700 mb-3">Unveiling the Powerful Features of the {car.carName}:</h2>
@@ -90,6 +105,14 @@ const CarPage = ({ params }: any) => {
           <div className="mt-8 sm:mt-10">
             <h2 className="text-lg sm:text-xl xl:text-2xl font-bold text-gray-700 mb-3">Is the {car.carName} the Right Choice for You?</h2>
             <p className="text-gray-600 text-sm sm:text-base">{car.para6}</p>
+          </div>
+
+          <div className="mt-8 sm:mt-14">
+            <h1 className="text-center text-xl sm:text-2xl text-gray-700">Give Your Feedback Here!</h1>
+            <form className="flex justify-center items-center gap-3 mt-3">
+              <input type="text" placeholder="Enter Comment" className="h-[35px] px-2 text-sm outline-blue-800" onChange={handleChange} value={inputVal}/>
+              <button className="bg-blue-800 w-[35px] h-[35px] rounded-md text-white" onClick={submit}><i className="ri-send-plane-2-fill"></i></button>
+            </form>
           </div>
         </div>
       </div>
