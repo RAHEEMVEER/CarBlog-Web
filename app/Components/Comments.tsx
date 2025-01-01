@@ -73,7 +73,7 @@ export default function Comments({ carName }: any) {
         <h1>comment</h1>
       </div>
       {carName === carName
-        ? commentVal.map((val) => <div>{val.inputVal}</div>)
+        ? commentVal.map((val, idx) => <div key={idx}>{val.inputVal}</div>)
         : ""}
     </div>
   );
