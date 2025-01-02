@@ -71,7 +71,7 @@ export default function Page() {
     {
       id: 6,
       img: "/images/mk4.png",
-      carName: "Supra Mk4",
+      carName: "Supra-Mk4",
       descript: "The Toyota Supra MK4 is a legendary sports car, known for its power, tuning potential, and style.",
       para1: "The Supra MK4 is a timeless classic, featuring a streamlined design and an iconic shape. Its interior blends sporty details with premium comfort, making every drive memorable.",
       para2: "Whether you're enjoying a spirited drive or cruising through the city, the Supra MK4's engineered suspension ensures a smooth ride and remarkable stability.",
@@ -106,22 +106,39 @@ export default function Page() {
     },
   ];
 
-  useEffect(() => {
-    const postData = async () => {
-      try {
-        const res = await fetch("/api/details", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(blogCars),
-        });
+  const postData = async () => {
+    try {
+      const res = await fetch("/api/details", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(blogCars),
+      });
 
-        const data = await res.json();
-        console.log("Response:", data);
-      } catch (error) {
-        console.error("Error posting data:", error);
-      }
-    };
+      const data = await res.json();
+      console.log("Response:", data);
+    } catch (error) {
+      console.error("Error posting data:", error);
+    }
+  };
+
+  const postCarName = async () => {
+    try{
+      const req = await fetch("/api/car", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(blogCars.map((name) => name.carName)),
+      });
+
+      const res =  await req.json();
+      console.log(res);
+    }catch(err){
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
     postData();
+    postCarName();
   }, []);
 
   return (

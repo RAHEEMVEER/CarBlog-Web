@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Comment {
   inputVal: string;
@@ -49,32 +49,16 @@ export default function Comments({ carName }: any) {
       console.error("Failed to fetch comments:", err);
     }
   };
+  
   return (
     <div className="mt-8 sm:mt-14">
-      <h1 className="text-center text-xl sm:text-2xl text-gray-700">
-        Give Your Feedback Here!
-      </h1>
+      <h1 className="text-center text-xl sm:text-2xl text-gray-700">Give Your Feedback Here!</h1>
       <form className="flex justify-center items-center gap-3 mt-3">
-        <input
-          type="text"
-          placeholder="Enter Comment"
-          className="h-[35px] px-2 text-sm outline-blue-800"
-          onChange={handleChange}
-          value={inputVal}
-        />
-        <button
-          className="bg-blue-800 w-[35px] h-[35px] rounded-md text-white"
-          onClick={submit}
-        >
-          <i className="ri-send-plane-2-fill"></i>
-        </button>
+        <input type="text" placeholder="Enter Comment" className="h-[35px] px-2 text-sm outline-blue-800" onChange={handleChange} value={inputVal}/>
+        <button className="bg-blue-800 w-[35px] h-[35px] rounded-md text-white" onClick={submit}><i className="ri-send-plane-2-fill"></i></button>
       </form>
-      <div>
-        <h1>comment</h1>
-      </div>
-      {carName === carName
-        ? commentVal.map((val, idx) => <div key={idx}>{val.inputVal}</div>)
-        : ""}
+      <div><h1 className="text-gray-700 text-lg sm:text-xl my-3">Comments:</h1></div>
+      {carName === carName ? commentVal.map((val, idx) => (<div key={idx} className="mt-1"><span className="text-sm sm:text-base text-gray-600 mt-1">{val.inputVal}</span></div>)) : <span className="text-gray-700 text-lg text-center">Comments Not Yet</span>}
     </div>
   );
 }
