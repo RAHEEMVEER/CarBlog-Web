@@ -31,7 +31,6 @@ const CarPage = ({ params }: any) => {
       const res = await fetch("/api/car");
       const data = await res.json();
       setCarNames(data);
-      console.log(data);
     } catch (error) {
       console.error("Error fetching car names:", error);
     }

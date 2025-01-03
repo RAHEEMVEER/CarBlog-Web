@@ -9,7 +9,6 @@ import Button from "../Components/Button";
 export default function Page() {
   const blogCars = [
     {
-      id: 1,
       img: "/images/audi.png",
       carName: "Audi",
       descript: "Audi is a luxury car brand known for its high performance, stylish design, and advanced technology.",
@@ -21,7 +20,6 @@ export default function Page() {
       para6: "Audi’s blend of sleek design, advanced tech, and performance makes it perfect for the modern driver. Sophistication meets power. Is it right for you? Only one way to find out!",
     },
     {
-      id: 2,
       img: "/images/i8.png",
       carName: "Bmw-i8",
       descript: "The BMW i8 is a futuristic plug-in hybrid sports car, combining performance, style, and sustainability.",
@@ -33,7 +31,6 @@ export default function Page() {
       para6: "The BMW i8’s sleek design and hybrid powertrain offer a futuristic driving experience. It’s perfect for eco-conscious performance seekers. Is it right for you? Only one way to find out!",
     },
     {
-      id: 3,
       img: "/images/bugatti.png",
       carName: "Bugatti",
       descript: "Bugatti is a luxury car brand known for high-performance, speed, and exceptional craftsmanship in supercars.",
@@ -45,7 +42,6 @@ export default function Page() {
       para6: "With jaw-dropping speed and unparalleled luxury, the Bugatti stands out as the ultimate performance machine. Is it right for you? Only one way to find out!",
     },
     {
-      id: 4,
       img: "/images/ferrari.png",
       carName: "Ferrari",
       descript: "Ferrari is a prestigious Italian sports car brand, renowned for speed, luxury, and exceptional engineering excellence.",
@@ -57,7 +53,6 @@ export default function Page() {
       para6: "The Ferrari delivers heart-racing performance and timeless elegance. If you crave luxury and speed, this is your car. Is it right for you? Only one way to find out!",
     },
     {
-      id: 5,
       img: "/images/m5.png",
       carName: "Bmw-m5",
       descript: "The BMW M5 is a high-performance luxury sedan, blending power, precision, and advanced driving technology.",
@@ -69,7 +64,6 @@ export default function Page() {
       para6: "The BMW M5 blends exhilarating performance with refined luxury. Perfect for drivers who want both power and comfort. Is it right for you? Only one way to find out!",
     },
     {
-      id: 6,
       img: "/images/mk4.png",
       carName: "Supra-Mk4",
       descript: "The Toyota Supra MK4 is a legendary sports car, known for its power, tuning potential, and style.",
@@ -81,7 +75,6 @@ export default function Page() {
       para6: "The Supra MK4 combines legendary performance and sharp styling. If you’re a driving enthusiast, it’s a dream come true. Is it right for you? Only one way to find out!",
     },
     {
-      id: 7,
       img: "/images/range.png",
       carName: "Range-Rover",
       descript: "Range Rover is a luxury SUV, renowned for its off-road capability, comfort, and refined design.",
@@ -93,7 +86,6 @@ export default function Page() {
       para6: "The Range Rover is built for those who want adventure and luxury in one package. Ideal for exploring rough terrains in comfort. Is it right for you? Only one way to find out!",
     },
     {
-      id: 8,
       img: "/images/mercedes.png",
       carName: "Mercedes",
       descript: "Mercedes is a luxury car brand, known for its elegant design, advanced technology, and superior performance.",
@@ -142,7 +134,7 @@ export default function Page() {
   }, []);
 
   return (
-    <section className="pt-5 pb-10 px-2 md:px-14 min-h-[88vh]">
+    <section className="pt-5 pb-6 sm:pb-10 px-2 md:px-14 min-h-[88vh]">
       <div className="w-full flex flex-col items-center justify-center relative">
         <h1 className="text-2xl font-semibold">Cars Blog</h1>
         <div className="after:absolute z-[-10] bg-blue-800 w-[100px] h-[3px] mt-1 rounded-md"></div>
